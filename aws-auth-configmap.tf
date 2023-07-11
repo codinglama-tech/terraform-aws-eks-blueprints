@@ -1,6 +1,5 @@
-/*
 resource "kubernetes_config_map" "aws_auth" {
-  count = var.create_eks ? 1 : 0
+  count = 0 //var.create_eks ? 1 : 0
 
   metadata {
     name      = "aws-auth"
@@ -33,4 +32,3 @@ resource "kubernetes_config_map" "aws_auth" {
 
   depends_on = [module.aws_eks.cluster_id, data.http.eks_cluster_readiness[0], module.aws_eks.eks_managed_node_groups]
 }
-*/
