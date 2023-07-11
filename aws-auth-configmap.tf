@@ -1,3 +1,4 @@
+/*
 resource "kubernetes_config_map" "aws_auth" {
   count = var.create_eks ? 1 : 0
 
@@ -30,5 +31,6 @@ resource "kubernetes_config_map" "aws_auth" {
     mapAccounts = yamlencode(var.map_accounts)
   }
 
-  depends_on = [module.aws_eks.cluster_id, data.http.eks_cluster_readiness[0]]
+  depends_on = [module.aws_eks.cluster_id, data.http.eks_cluster_readiness[0], module.aws_eks.eks_managed_node_groups]
 }
+*/
